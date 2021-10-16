@@ -22,7 +22,7 @@ app.get("/", (req, res, next) => {
 app.post("/scan", (req, res, next) => {
   const input_text = req.body.text;
   qrcode.toDataURL(input_text, (err, src) => {
-    if (err) res.send("Something went wrong!!!");
+    if (err) res.send("Something went wrong!!");
     res.render("scan", {
       qr_code: src,
     });
